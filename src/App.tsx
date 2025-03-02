@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 type Page = 'generator' | 'gallery' | 'about';
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<Page>('generator');
+  const [currentPage, _setCurrentPage] = useState<Page>('generator');
 
   const renderPage = () => {
     switch (currentPage) {
