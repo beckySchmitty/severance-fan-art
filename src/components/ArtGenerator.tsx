@@ -66,10 +66,10 @@ const ArtGenerator: React.FC = () => {
                   Outie World
                 </button>
                 <button 
-                  className={`py-2 px-3 text-sm rounded-md border ${artStyle === 'breakroom' ? 'bg-blue-50 border-blue-200 text-blue-700' : 'border-gray-200 text-gray-700'}`}
-                  onClick={() => setArtStyle('breakroom')}
+                  className={`py-2 px-3 text-sm rounded-md border ${artStyle === 'characters' ? 'bg-blue-50 border-blue-200 text-blue-700' : 'border-gray-200 text-gray-700'}`}
+                  onClick={() => setArtStyle('characters')}
                 >
-                  Break Room
+                  Characters
                 </button>
               </div>
             </div>
@@ -141,7 +141,7 @@ const ArtGenerator: React.FC = () => {
                 <div className="text-white">
                   <p className="text-sm uppercase tracking-wider mb-1">
                     Severance • {currentImage.style === 'office' ? 'Lumon Office' : 
-                               currentImage.style === 'outie' ? 'Outie World' : 'Break Room'}
+                               currentImage.style === 'outie' ? 'Outie World' : 'Characters'}
                   </p>
                   <p className="text-xs opacity-75">
                     Generated on {new Date(currentImage.createdAt).toLocaleDateString()}

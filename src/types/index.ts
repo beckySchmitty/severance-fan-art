@@ -4,5 +4,11 @@ export interface ArtImage {
     style: ArtStyle;
     createdAt: Date;
   }
+
+  export interface ImportMeta {
+    env: {
+    VITE_STABILITY_API_KEY: string;
+    };
+  }
   
-  export type ArtStyle = 'office' | 'outie' | 'breakroom';
+  export type ArtStyle = 'office' | 'outie' | 'characters';

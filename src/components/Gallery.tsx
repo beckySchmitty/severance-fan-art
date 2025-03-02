@@ -51,7 +51,7 @@ const Gallery: React.FC = () => {
                 <div className="text-white">
                   <p className="text-sm uppercase tracking-wider mb-1">
                     {image.style === 'office' ? 'Lumon Office' : 
-                    image.style === 'outie' ? 'Outie World' : 'Break Room'}
+                    image.style === 'outie' ? 'Outie World' : 'Characters'}
                   </p>
                   <p className="text-xs opacity-75">
                     Created on {new Date(image.createdAt).toLocaleDateString()}
