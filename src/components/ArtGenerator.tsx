@@ -45,7 +45,7 @@ const ArtGenerator: React.FC = () => {
 
   return (
     <main className="flex-grow flex flex-col md:flex-row p-4 max-w-6xl mx-auto w-full">
-      {/* Left Side - Controls */}
+      {/* Left Side - Controls (desktop) / Top Controls (mobile) */}
       <div className="w-full md:w-1/3 p-4">
         <div className="bg-gray-50 p-6 rounded-lg shadow-sm mb-6">
           <h2 className="text-xl font-medium mb-4">Generate Art</h2>
@@ -93,36 +93,12 @@ const ArtGenerator: React.FC = () => {
             </button>
           </div>
         </div>
-
-        <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-          <h2 className="text-xl font-medium mb-4">Saved Art</h2>
-          {savedImages.length === 0 ? (
-            <p className="text-gray-500 text-sm">No saved images yet. Generate and save some art!</p>
-          ) : (
-            <div className="grid grid-cols-2 gap-2">
-              {savedImages.slice(0, 4).map((image) => (
-                <div key={image.id} className="aspect-square bg-gray-200 rounded-md overflow-hidden">
-                  <img src={image.url} alt="Saved Severance art" className="w-full h-full object-cover" />
-                </div>
-              ))}
-              {savedImages.length > 4 && (
-                <div className="aspect-square bg-gray-100 rounded-md flex items-center justify-center">
-                  <span className="text-gray-600">+{savedImages.length - 4} more</span>
-                </div>
-              )}
-            </div>
-          )}
-          {savedImages.length > 0 && (
-            <button className="mt-4 w-full border border-gray-300 text-gray-700 py-2 px-4 rounded-md flex items-center justify-center">
-              View All Saved Art
-            </button>
-          )}
-        </div>
       </div>
 
-      {/* Right Side - Generated Image */}
-      <div className="w-full md:w-2/3 p-4">
-        <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg">
+      {/* Right Side - Generated Image and Information */}
+      <div className="w-full md:w-2/3 p-4 flex flex-col">
+        {/* Generated Image */}
+        <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg mb-6">
           {isGenerating ? (
             <div className="aspect-video bg-gray-100 flex items-center justify-center">
               <div className="flex flex-col items-center">
@@ -183,8 +159,8 @@ const ArtGenerator: React.FC = () => {
           )}
         </div>
 
-        {/* Instructions/Info Card */}
-        <div className="mt-6 bg-gray-50 border border-gray-200 p-4 rounded-lg">
+        {/* Instructions/Info Card - Now moved above Saved Art in the visual flow */}
+        <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg mb-6">
           <h3 className="font-medium mb-2">About This Generator</h3>
           <p className="text-sm text-gray-600">
             This fan art generator creates images inspired by the Apple TV+ show "Severance". 
@@ -197,6 +173,32 @@ const ArtGenerator: React.FC = () => {
               <span>Reminder: The work is important and mysterious.</span>
             </div>
           </div>
+        </div>
+
+        {/* Saved Art Section - Now below the About This Generator section */}
+        <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
+          <h2 className="text-xl font-medium mb-4">Saved Art</h2>
+          {savedImages.length === 0 ? (
+            <p className="text-gray-500 text-sm">No saved images yet. Generate and save some art!</p>
+          ) : (
+            <div className="grid grid-cols-2 gap-2">
+              {savedImages.slice(0, 4).map((image) => (
+                <div key={image.id} className="aspect-square bg-gray-200 rounded-md overflow-hidden">
+                  <img src={image.url} alt="Saved Severance art" className="w-full h-full object-cover" />
+                </div>
+              ))}
+              {savedImages.length > 4 && (
+                <div className="aspect-square bg-gray-100 rounded-md flex items-center justify-center">
+                  <span className="text-gray-600">+{savedImages.length - 4} more</span>
+                </div>
+              )}
+            </div>
+          )}
+          {savedImages.length > 0 && (
+            <button className="mt-4 w-full border border-gray-300 text-gray-700 py-2 px-4 rounded-md flex items-center justify-center">
+              View All Saved Art
+            </button>
+          )}
         </div>
       </div>
     </main>
