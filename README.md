@@ -1,12 +1,63 @@
-# React + Vite
+# Severance Fan Art Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application that allows users to generate fan art inspired by the Apple TV+ show "Severance". This project was built with React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Generate random fan art based on different themes from the show
+- Save favorite images to a local gallery
+- Download images for personal use
+- Mobile-responsive design
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+- GitHub Pages for deployment
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```
+git clone https://github.com/yourusername/severance-fan-art.git
+cd severance-fan-art
+```
+
+2. Install dependencies:
+```
+npm install
+```
+
+3. Start the development server:
+```
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173/severance-fan-art/`
+
+## Deployment
+
+This project is configured for GitHub Pages deployment:
+
+1. Build the project:
+```
+npm run build
+```
+
+2. Deploy to GitHub Pages:
+```
+npm run deploy
+```
+
+## Disclaimer
+
+This is a fan project and is not affiliated with or endorsed by Apple TV+ or the creators of "Severance". All generated art is for personal use only.
